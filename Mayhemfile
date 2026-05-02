@@ -1,0 +1,5 @@
+project: plutovg
+target: plutovg-fuzz
+
+cmds:
+  - cmd: /plutovg-fuzz
