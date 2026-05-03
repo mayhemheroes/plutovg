@@ -58,9 +58,9 @@ int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 
     plutovg_save(pluto);
     plutovg_arc(pluto, center_x, center_y, face_radius, a0, a1 * pi, a2);
-    plutovg_set_source_rgb(pluto, bytes_to_double(s_data, &size), bytes_to_double(s_data, &size), bytes_to_double(s_data, &size));
+    plutovg_set_rgb(pluto, bytes_to_double(s_data, &size), bytes_to_double(s_data, &size), bytes_to_double(s_data, &size));
     plutovg_fill_preserve(pluto);
-    plutovg_set_source_rgb(pluto, bytes_to_double(s_data, &size), bytes_to_double(s_data, &size), bytes_to_double(s_data, &size));
+    plutovg_set_rgb(pluto, bytes_to_double(s_data, &size), bytes_to_double(s_data, &size), bytes_to_double(s_data, &size));
     plutovg_set_line_width(pluto, bytes_to_double(s_data, &size));
     plutovg_stroke(pluto);
     plutovg_restore(pluto);
