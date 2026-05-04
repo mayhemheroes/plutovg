@@ -1,5 +1,5 @@
 # Build Stage
-FROM --platform=linux/amd64 ubuntu:20.04 AS builder
+FROM --platform=linux/amd64 ubuntu:22.04 AS builder
 
 ## Install build dependencies.
 RUN apt-get update && \
@@ -16,7 +16,7 @@ RUN CC=clang CXX=clang++ cmake .. -DBUILD_FUZZER=1
 RUN make
 
 # Package Stage
-FROM --platform=linux/amd64 ubuntu:20.04
+FROM --platform=linux/amd64 ubuntu:22.04
 COPY --from=builder /plutovg/build/fuzz/plutovg-fuzz /
 
 CMD /plutovg-fuzz
